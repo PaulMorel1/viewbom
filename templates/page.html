@@ -19,13 +19,39 @@
       </ul>
       {{/component}}
 
-      <h2>Components in {{ component.name }}</h1>
-      <ul>
-        <li>Total: {{ count }}</li>
-      </ul>
-      {{#components}}
       <div>
-        <h4><a href="https://socket.dev/npm/package/{{ name }}">{{name}}</a> {{ version }}</h4>
+        <h2>Components in {{ component.name }}</h1>
+        <ul>
+          <li>Total: {{ count }}</li>
+          <li>Duplicates: {{ duplicateCount }}</li>
+        </ul>
+        <script>
+          // simple filtering 
+          function filter() {
+            const input = document.getElementById("filterInput").value;
+            const rows = document.getElementsByClassName("component-row");
+
+            for(let i = 0; i < rows.length; i++) {
+              let row = rows[i];
+
+              if(!row.id.includes(input)) {
+                row.style.display = "none";
+              } else {
+                row.style.display = "";
+              }
+            }
+          }
+        </script>
+        <label>
+          Filter:
+          <input type="text" id="filterInput" />
+        </label>
+        <button onClick="filter();">Filter</button>
+      </div>
+
+      {{#components}}
+      <div class="component-row" id="{{ name }}">
+        <h4><a href="https://socket.dev/npm/package/{{ name }}">{{name}}</a> {{ versions }}</h4>
         <ul>
           {{#externalReferences}}
             <li>{{ type }}: <a href="{{url}}" target="_blank">{{ url }}</a></li>
