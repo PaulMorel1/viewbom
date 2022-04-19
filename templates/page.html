@@ -1,17 +1,34 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>{{ component.name }}</title>
+    <title>Software bill of materials for {{ component.name }}</title>
   </head>
   <body>
     <main>
-      <h1>{{ component.name }}</h1>
+      {{#component}}
+      <h1>Software bill of materials for {{ name }}</h1>
+      <ul>
+        <li>Type: {{ type }}</li>
+        <li>Version: {{ version }}</li>
+        <li>Author: <a href="https://google.com?q={{ component.author }}">{{ component.author }}</a></li>
+        <li>Description: {{ description }}</li>
+        <li>purl: {{ purl }}</li>
+        {{#externalReferences}}
+          <li>{{ type }}: <a href="{{url}}" target="_blank">{{ url }}</a></li>
+        {{/externalReferences}}
+      </ul>
+      {{/component}}
+
+      <h2>Components in {{ component.name }}</h1>
+      <ul>
+        <li>Total: {{ count }}</li>
+      </ul>
       {{#components}}
       <div>
-        <h2><a href="https://socket.dev/npm/package/{{ name }}">{{name}}</a></h2>
+        <h4><a href="https://socket.dev/npm/package/{{ name }}">{{name}}</a> {{ version }}</h4>
         <ul>
           {{#externalReferences}}
-            <li><a href="{{url}}" target="_blank">{{ url }}</a></li>
+            <li>{{ type }}: <a href="{{url}}" target="_blank">{{ url }}</a></li>
           {{/externalReferences}}
         </ul>
       </div>

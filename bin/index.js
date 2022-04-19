@@ -13,7 +13,7 @@ const rawdata = fs.readFileSync(inputFile);
 const bom = JSON.parse(rawdata);
 
 // set up the values and template
-const values = { component: bom.metadata.component, components: bom.components };
+const values = { component: bom.metadata.component, components: bom.components, count: bom.components.length };
 const template = fs.readFileSync("templates/page.html", 'utf8');
 
 // render the template
