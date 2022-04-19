@@ -7,7 +7,14 @@
     <main>
       <h1>{{ component.name }}</h1>
       {{#components}}
-      <b>{{name}}</b>
+      <div>
+        <h2><a href="https://socket.dev/npm/package/{{ name }}">{{name}}</a></h2>
+        <ul>
+          {{#externalReferences}}
+            <li><a href="{{url}}" target="_blank">{{ url }}</a></li>
+          {{/externalReferences}}
+        </ul>
+      </div>
       {{/components}}
     </main>
   </body>
