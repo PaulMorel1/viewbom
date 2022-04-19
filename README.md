@@ -8,21 +8,18 @@ It's extremely easy to generate a [CycloneDX Bill of Materials](https://github.c
 
 ## How to use this?
 
-1. First, install @cyclonedx/bom and viewbom.
+1. Generate a bill of materials for your project. Run this in the root folder of your project.
 
 ```
-```
-
-2. Generate a bill of materials for your project. Run this in the root folder of your project.
-
-```
+npm install @cyclonedx/bom -g
 npx @cyclonedx/bom . -o bom.json
 ```
 
-3. Run viewbom.
+2. Run viewbom.
 
 ```
-npx @PaulMorel/viewbom
+npm install viewbom -g
+npx viewbom bom.json output.html
 ```
 
 ## Dependencies
