@@ -14,6 +14,11 @@
   },
   "author": "Evan X. Merz",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/PaulMorel1/viewbom.git"
+  },
+  "homepage": "https://github.com/PaulMorel1/viewbom.git",
   "dependencies": {
     "mustache": "^4.2.0"
   }

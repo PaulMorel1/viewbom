@@ -22,6 +22,8 @@ npm install viewbom -g
 npx viewbom bom.json output.html
 ```
 
+This will take `bom.json` as input and generate `output.html`. Open `output.html` in a browser to view your bill of materials.
+
 ## Dependencies
 
 1. [Mustache.js](https://www.npmjs.com/package/mustache)
