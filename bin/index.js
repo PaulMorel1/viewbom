@@ -70,7 +70,7 @@ function viewBom(inputFilePath, outputFilePath) {
   const bom = JSON.parse(rawdata);
 
   const analysis = analyze(bom);
-  const html = renderToHtml(analysis, "templates/page.html")
+  const html = renderToHtml(analysis, `${__dirname}/../templates/page.html`)
 
   // write to a file
   fs.writeFileSync(outputFile, html);
