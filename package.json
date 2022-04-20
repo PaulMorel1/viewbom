@@ -2,7 +2,7 @@
   "name": "viewbom",
   "version": "0.0.3",
   "description": "A simple npx tool for viewing a cyclonedx bill of materials for a node app.",
-  "main": "index.js",
+  "main": "bin/index.js",
   "directories": {
     "example": "example"
   },
